@@ -1,6 +1,6 @@
 # WaterBudget
 ## Concept
-Apply the budgeting 
+Apply the budgeting metaphor of personal finance apps like Mint to municipal water usage.
 
 ## Proposed flow
 1. User selects their local water supplier from a map.
