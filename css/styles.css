@@ -1,0 +1,17 @@
+body {
+  font-family: Lato, sans-serif;
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.hidden {
+  display: none;
+}
+
+#mapContainer {
+  height: 600px;
+}
+
+#map {
+  height: 100%;
+}
