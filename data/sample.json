@@ -16,23 +16,11 @@
       "2015-11": 90,
       "2015-10": 112,
     },
-    /*"usageByCategory": {
-      "residential": {
-        "2016-09": ...,
-        "2016-08": ...,
-        ...
-      },
-      "agricultural": {
-        "2016-09": ...,
-        "2016-08": ...,
-        ...
-      },
-      "commercialIndustrial": {
-        "2016-09": ...,
-        "2016-08": ...,
-        ...
-      }
-    },*/
+    "usageByCategory": {
+      "residential": {},
+      "agricultural": {},
+      "commercialIndustrial": {}
+    },
     "monthlyPrediction": {
       "11": 100,
       "12": 95,
