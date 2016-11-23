@@ -23,6 +23,7 @@ function initMap() {
 
   // Load water supplier GeoJSON data.
   $.getJSON('data/water-suppliers.geojson', null, function (data) {
+    // Add GeoJSON regions and style them.
     var regions = data.features.filter(function (x) { return PWS_IDS.indexOf(x.properties.pwsid) > -1; });
 
     map.data.addGeoJson({type: 'FeatureCollection', features: regions});
@@ -38,6 +39,7 @@ function initMap() {
       };
     });
 
+    // Add mouseover & click events.
     var infoWindow = new google.maps.InfoWindow();
 
     map.data.addListener('mouseover', function (event) {
@@ -48,7 +50,7 @@ function initMap() {
 
       infoWindow.open(map);
       infoWindow.setPosition(event.latLng);
-      infoWindow.setContent('<div onClick="openBudgetPane(' + id + ')">' + name + '</div>');
+      infoWindow.setContent('<div id="infoWindow" onClick="openBudgetPane(' + id + ')">' + name + '</div>');
 
       google.maps.event.addListenerOnce(map, 'mousemove', function() {
         map.data.revertStyle();
@@ -59,5 +61,10 @@ function initMap() {
     map.data.addListener('click', function (event) {
       openBudgetPane(event.feature.getProperty('pwsid'));
     });
+
+    // Wait a bit for things to render, then hide the spinner.
+    setTimeout(function () {
+      $('#mapSpinner').hide();
+    }, 1000);
   });
 }

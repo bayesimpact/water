@@ -10,5 +10,7 @@ function openMapPane() {
 }
 
 $(function () {
+  initMap();
+
   $('#chooseADifferentAgency').click(openMapPane);
 })

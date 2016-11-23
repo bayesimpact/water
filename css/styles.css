@@ -4,6 +4,10 @@ body {
   max-width: 1200px;
 }
 
+.panel {
+  position: relative;
+}
+
 .hidden {
   display: none;
 }
@@ -14,4 +18,15 @@ body {
 
 #map {
   height: 100%;
+}
+
+#mapSpinner {
+  position: absolute;
+  z-index: 9999;
+  top: 55%;
+  left: 48%;
+}
+
+#infoWindow {
+  cursor: pointer;
 }
