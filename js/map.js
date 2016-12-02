@@ -10,7 +10,8 @@ function initMap() {
   });
 
   // Zoom into user location if possible.
-  if (navigator.geolocation) {
+  // (Disabling for now for testing while we're in France.)
+  /*if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(pos) {
       var userLocation = {
         lat: pos.coords.latitude,
@@ -19,7 +20,7 @@ function initMap() {
       map.setCenter(userLocation);
       map.setZoom(10);
     });
-  }
+  }*/
 
   // Load water supplier GeoJSON data.
   $.getJSON('data/water-suppliers.geojson', null, function (data) {

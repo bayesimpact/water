@@ -60,7 +60,8 @@ function openBudgetPane(agencyId) {
       width: 1000,
       height: 800,
       hAxis: {
-        title: 'Month of the water year (Oct - Sep)'
+        title: 'Month of the water year (Oct - Sep)',
+        format: 'MMM'
       },
       vAxis: {
         title: 'Cumulative consumption (gallons per capita)'
