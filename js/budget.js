@@ -1,6 +1,6 @@
 function renderBudgetLineChart(agencyId) {
   $.getJSON('data/sample.json', null, function (data) {
-    agencyData = data.sampleId;
+    var agencyData = data.sampleId;
 
     $('#budgetPane').show();
     $('#budgetPane #agencyName').text(agencyData.agencyName);

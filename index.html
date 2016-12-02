@@ -11,16 +11,30 @@
     <script src="js/app.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <h1>WaterBudget</h1>
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">WaterBudget</a>
+        <ul class="right">
+          <li><a href="about.html" target="_blank">About</a></li>
+        </ul>
+
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a class="active" href="#mapPane">Map</a></li>
+          <li class="tab disabled"><a href="#budgetPane">Budget</a></li>
+          <li class="tab disabled"><a href="#transactionsPane">Transactions</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <div id="mapPane" class="pane">
-      <p>To start, select your city's water agency. <em>(Note: We don't have water use data from all water suppliers. If your supplier isn't on the map, try one nearby!)</em></p>
+      <p>Select your city's water agency. <em>(Note: We don't have water use data from all water suppliers. If your supplier isn't on the map, try one nearby!)</em></p>
 
       <div id="mapSpinner" class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue-only">
@@ -39,10 +53,17 @@
       </div>
     </div>
 
-    <div id="budgetPane" class="hidden pane">
-      <h3>Agency: <span id="agencyName"></span></h3>
-      <p><a id="chooseADifferentAgency" href="#">[Choose a different agency?]</a></p>
+    <div id="budgetPane" class="pane">
+      <div class="chip">
+        <b>Agency:</b> <span id="agencyName"></span>
+        <i class="material-icons deselect-agency-button">close</i>
+      </div>
+
       <div id="budgetViz"></div>
+    </div>
+
+    <div id="transactionsPane" class="pane">
+      TODO
     </div>
   </body>
 </html>

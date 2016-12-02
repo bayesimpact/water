@@ -4,12 +4,17 @@ body {
   max-width: 1200px;
 }
 
-.panel {
-  position: relative;
+nav {
+  background-color: #4444cc;
 }
 
-.hidden {
-  display: none;
+nav .brand-logo {
+  margin-left: 1.5rem;
+}
+
+.pane {
+  padding: 10px;
+  padding-top: 15px;
 }
 
 #mapContainer {
@@ -29,4 +34,12 @@ body {
 
 #infoWindow {
   cursor: pointer;
+}
+
+.deselect-agency-button {
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  line-height: 32px;
+  padding-left: 8px;
 }

@@ -1,17 +1,16 @@
-var agencyData;
 function openBudgetPane(agencyId) {
-  $('.pane').hide();
+  $('ul.tabs li').removeClass('disabled');
+  $('ul.tabs').tabs('select_tab', 'budgetPane');
   renderBudgetLineChart(agencyId);
 }
 
-function openMapPane() {
-  $('.pane').hide();
-  $('#mapPane').show();
-}
-
 $(function () {
-  initMap();
   google.charts.load("current", {packages: ["corechart"]});
 
-  $('#chooseADifferentAgency').click(openMapPane);
+  $('.deselect-agency-button').click(function () {
+    $('ul.tabs').tabs('select_tab', 'mapPane');
+    $('ul.tabs li:not(:first-child)').addClass('disabled');
+  });
+
+  initMap();
 });
