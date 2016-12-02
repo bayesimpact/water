@@ -11,7 +11,7 @@ function openMapPane() {
 
 $(function () {
   initMap();
-  google.charts.load("current", {packages: ["corechart"]});
+  google.charts.load("current", {packages: ["line"]});
 
   $('#chooseADifferentAgency').click(openMapPane);
 });

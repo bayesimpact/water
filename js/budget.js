@@ -12,7 +12,7 @@ function renderBudgetLineChart(agencyId) {
     var currentYearStart = (lastReportedMonth >= 10) ? lastReportedYear : lastReportedYear - 1;
     var annualTarget = agencyData.annualTarget;
 
-    var visualization = new google.visualization.LineChart($('#budgetViz')[0]);
+    var visualization = new google.charts.Line($('#budgetViz')[0]);
 
     var data = new google.visualization.DataTable();
     data.addColumn('date', 'Month');
@@ -55,8 +55,7 @@ function renderBudgetLineChart(agencyId) {
       title: 'Water Usage for ' + agencyData.agencyName,
       width: 900,
       height: 600,
-      chartArea: {width: '80%', height: '80%'},
-      legend: {position: 'top'},
+      chartArea: {height: '80%'},
       hAxis: {
         title: 'Month of the water year (Oct - Sep)',
         format: 'MMM',
@@ -80,13 +79,11 @@ function renderBudgetLineChart(agencyId) {
         },
         2: {
           // Last year
-          color: '#8888ff',
-          lineWidth: 2
+          color: '#8888ff'
         },
         3: {
           // Target
-          color: 'black',
-          lineWidth: 1
+          color: 'black'
         }
       },
       curveType: 'function'
