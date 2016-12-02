@@ -53,6 +53,11 @@ function openBudgetPane(agencyId) {
       }
     });
 
+    var dateFormatter = new google.visualization.DateFormat({
+        pattern: "'October through 'MMMM"
+    });
+    dateFormatter.format(data, 0);
+
     console.log(data.toJSON());
 
     var options = {
