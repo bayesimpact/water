@@ -25,9 +25,9 @@ function openBudgetPane(agencyId) {
 
     var data = new google.visualization.DataTable();
     data.addColumn('date', 'Month');
-    data.addColumn('number', 'Actual (water year ' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
-    data.addColumn('number', 'Projected (water year ' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
-    data.addColumn('number', 'Actual Last Year (water year ' + (currentYearStart - 1) + '-' + currentYearStart.toString().slice(2) + ')');
+    data.addColumn('number', 'Actual (' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
+    data.addColumn('number', 'Projected (' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
+    data.addColumn('number', 'Actual Last Year (' + (currentYearStart - 1) + '-' + currentYearStart.toString().slice(2) + ')');
     data.addColumn('number', 'Annual Target');
 
     var lastYearRunningTotal = 0;
@@ -57,14 +57,18 @@ function openBudgetPane(agencyId) {
 
     var options = {
       title: 'Water Usage for ' + agencyData.agencyName,
-      width: 1000,
-      height: 800,
+      width: 900,
+      height: 600,
+      chartArea: {width: '80%', height: '80%'},
+      legend: {position: 'top'},
       hAxis: {
         title: 'Month of the water year (Oct - Sep)',
-        format: 'MMM'
+        format: 'MMM',
+        gridlines: {count: 12}
       },
       vAxis: {
-        title: 'Cumulative consumption (gallons per capita)'
+        title: 'Cumulative consumption (gallons per capita)',
+        gridlines: {count: 10}
       },
       series: {
         0: {
@@ -88,7 +92,8 @@ function openBudgetPane(agencyId) {
           color: 'black',
           lineWidth: 1
         }
-      }
+      },
+      curveType: 'function'
     }
 
     visualization.draw(data, options);
