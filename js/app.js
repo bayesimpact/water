@@ -25,8 +25,8 @@ function openBudgetPane(agencyId) {
 
     var data = new google.visualization.DataTable();
     data.addColumn('date', 'Month');
-    data.addColumn('number', 'Actual (' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
     data.addColumn('number', 'Projected (' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
+    data.addColumn('number', 'Actual (' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
     data.addColumn('number', 'Actual Last Year (' + (currentYearStart - 1) + '-' + currentYearStart.toString().slice(2) + ')');
     data.addColumn('number', 'Annual Target');
 
@@ -46,10 +46,10 @@ function openBudgetPane(agencyId) {
 
       if (thisMonthProjected) {
         thisYearRunningTotal += agencyData.monthlyPrediction[month.padLeft(2)];
-        data.addRow([new Date(year, month - 1), null, thisYearRunningTotal, lastYearRunningTotal, annualTarget]);
+        data.addRow([new Date(year, month - 1), thisYearRunningTotal, null, lastYearRunningTotal, annualTarget]);
       } else {
         thisYearRunningTotal += agencyData.totalUsage[year + '-' + month.padLeft(2)];
-        data.addRow([new Date(year, month - 1), thisYearRunningTotal, nextMonthProjected ? thisYearRunningTotal : null, lastYearRunningTotal, annualTarget]);
+        data.addRow([new Date(year, month - 1), nextMonthProjected ? thisYearRunningTotal : null, thisYearRunningTotal, lastYearRunningTotal, annualTarget]);
       }
     });
 
@@ -77,14 +77,14 @@ function openBudgetPane(agencyId) {
       },
       series: {
         0: {
-          // Actual
-          color: '#0000ff',
-          lineWidth: 4
-        },
-        1: {
           // Projected
           color: '#0000ff',
           lineDashStyle: [4, 4],
+          lineWidth: 4
+        },
+        1: {
+          // Actual
+          color: '#0000ff',
           lineWidth: 4
         },
         2: {
