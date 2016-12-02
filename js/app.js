@@ -104,6 +104,4 @@ $(function () {
   google.charts.load("current", {packages: ["corechart"]});
 
   $('#chooseADifferentAgency').click(openMapPane);
-
-  setTimeout(openBudgetPane, 2000);
-})
+});
