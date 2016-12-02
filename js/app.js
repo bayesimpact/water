@@ -1,7 +1,7 @@
-function openBudgetPane(agencyId) {
+function openBudgetPane(agencyId, agencyName) {
   $('ul.tabs li').removeClass('disabled');
   $('ul.tabs').tabs('select_tab', 'budgetPane');
-  renderBudgetLineChart(agencyId);
+  renderBudgetLineChart(agencyId, agencyName);
 }
 
 $(function () {

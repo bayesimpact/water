@@ -1,9 +1,11 @@
-function renderBudgetLineChart(agencyId) {
-  $.getJSON('data/sample.json', null, function (data) {
-    var agencyData = data.sampleId;
+function renderBudgetLineChart(agencyId, agencyName) {
+  $.getJSON('data/usage.json', null, function (data) {
+    console.log(agencyId);
+    var agencyData = data['CA' + agencyId];
 
     $('#budgetPane').show();
-    $('#budgetPane #agencyName').text(agencyData.agencyName);
+    $('#budgetPane #agencyName').text(agencyName);
+    $('#budgetViz').html('');
     //$('#budgetViz').text(JSON.stringify(agencyData));
 
     var lastReportedDate = Object.keys(agencyData.totalUsage).sort().pop();
@@ -52,7 +54,7 @@ function renderBudgetLineChart(agencyId) {
     console.log(data.toJSON());
 
     var options = {
-      title: 'Water Usage for ' + agencyData.agencyName,
+      title: 'Water Usage for ' + agencyName,
       width: 900,
       height: 600,
       chartArea: {width: '80%', height: '80%'},
