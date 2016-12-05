@@ -116,18 +116,18 @@ function renderBudget(agencyId, agencyName) {
     series: {
       0: {
         // Projected
-        color: '#0000ff',
+        color: '#2574A9',
         lineDashStyle: [4, 4],
         lineWidth: 4
       },
       1: {
         // Actual
-        color: '#0000ff',
+        color: '#2574A9',
         lineWidth: 4
       },
       2: {
         // Last year
-        color: '#8888ff',
+        color: '#7dbae3',
         lineWidth: 2
       },
       3: {

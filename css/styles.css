@@ -5,7 +5,7 @@ body {
 }
 
 nav {
-  background-color: #4444cc;
+  background-color: #2574A9;
 }
 
 nav .brand-logo {
@@ -59,23 +59,24 @@ nav .tab.disabled a {
 }
 
 #budgetPane {
-  font-size: 1.2em;
+  font-size: 0.9em;
+  padding-top: 32px;
 }
 
 #budgetPane .card-panel {
-  background-color: #8888ff;
+  background-color: #2574A9;
   color: white;
 }
 
 #budgetPane .card-panel.over {
-  background-color: red;
+  background-color: #B9493E;
 }
 
 #budgetPane .card-panel.under {
-  background-color: green;
+  background-color: #239D58;
 }
 
 #budgetPane .card-panel div {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
 }
