@@ -3,7 +3,13 @@ var PWS_IDS = ["0105008", "0110001", "0110005", "0110006", "0110008", "0110009",
 var map;
 var pwsid;
 
+$(window).resize(function () { map = null; });  // Clear map object on resize to triger redraw.
+
 function initMap() {
+  if (map) {
+    return;
+  }
+
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.9, lng: -120.7},
     zoom: 8
