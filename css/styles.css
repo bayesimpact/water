@@ -25,7 +25,7 @@ nav .brand-logo {
   height: 100%;
 }
 
-#mapSpinner {
+#mapSpinner, #budgetSpinner {
   position: absolute;
   z-index: 9999;
   top: 55%;
@@ -36,7 +36,7 @@ nav .brand-logo {
   cursor: pointer;
 }
 
-.deselect-agency-button {
+#budgetPane .deselect-agency-button {
   cursor: pointer;
   float: right;
   font-size: 16px;
@@ -44,12 +44,24 @@ nav .brand-logo {
   padding-left: 8px;
 }
 
-#budgetSidebar .card-panel {
+#budgetPane {
+  font-size: 1.2em;
+}
+
+#budgetPane .card-panel {
   background-color: #8888ff;
   color: white;
 }
 
-#budgetSidebar .card-panel div {
+#budgetPane .card-panel.over {
+  background-color: red;
+}
+
+#budgetPane .card-panel.under {
+  background-color: green;
+}
+
+#budgetPane .card-panel div {
   font-size: 1.5em;
   font-weight: bold;
 }

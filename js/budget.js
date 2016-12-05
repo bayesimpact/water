@@ -1,5 +1,10 @@
-function renderBudgetLineChart(agencyId, agencyName) {
+function renderBudget(agencyId, agencyName) {
+  $('#budget').hide();
+  $('#budgetSpinner').show();
+
   $.getJSON('data/usage.json', null, function (data) {
+    // Extract data from JSON.
+
     console.log(agencyId);
     var agencyData = data['CA' + agencyId];
 
@@ -15,6 +20,8 @@ function renderBudgetLineChart(agencyId, agencyName) {
     var annualTarget = agencyData.annualTarget;
 
     var visualization = new google.visualization.LineChart($('#budgetViz')[0]);
+
+    // Generate data for charts.
 
     var data = new google.visualization.DataTable();
     data.addColumn('date', 'Month');
@@ -48,19 +55,37 @@ function renderBudgetLineChart(agencyId, agencyName) {
       }
     });
 
-    var projectedPct = Math.round((thisYearRunningTotal / annualTarget - 1) * 1000) / 10;
-    var lastYearPct = Math.round((lastYearRunningTotal / annualTarget - 1) * 1000) / 10;
-
-    $('#totalBudget').text(Math.round(annualTarget) + " gal. / capita");
-    $('#projectedPct').text(projectedPct >= 0 ? projectedPct + "% OVER" : (-projectedPct) + "% UNDER");
-    $('#lastYearPct').text(lastYearPct >= 0 ? lastYearPct + "% OVER" : (-lastYearPct) + "% UNDER");
-
     var dateFormatter = new google.visualization.DateFormat({
         pattern: "'October through 'MMMM"
     });
     dateFormatter.format(data, 0);
 
     console.log(data.toJSON());
+
+    // Format sidebar cards.
+
+    var projectedPct = Math.round((thisYearRunningTotal / annualTarget - 1) * 1000) / 10;
+    var lastYearPct = Math.round((lastYearRunningTotal / annualTarget - 1) * 1000) / 10;
+
+    $('#totalBudget').text(Math.round(annualTarget) + " gal. / capita");
+
+    if (projectedPct > 0) {
+      $('#projectedPct').text(projectedPct + "% OVER");
+      $('#thisYearCard').removeClass('under').addClass('over');
+    } else {
+      $('#projectedPct').text(-projectedPct + "% UNDER");
+      $('#thisYearCard').removeClass('over').addClass('under');
+    }
+
+    if (lastYearPct > 0) {
+      $('#lastYearPct').text(lastYearPct + "% OVER");
+      $('#lastYearCard').removeClass('under').addClass('over');
+    } else {
+      $('#lastYearPct').text(-lastYearPct + "% UNDER");
+      $('#lastYearCard').removeClass('over').addClass('under');
+    }
+
+    // Render the chart.
 
     var options = {
       title: 'Water Usage for ' + agencyName,
@@ -102,6 +127,9 @@ function renderBudgetLineChart(agencyId, agencyName) {
       },
       curveType: 'function'
     }
+
+    $('#budgetSpinner').hide();
+    $('#budget').show();
 
     visualization.draw(data, options);
 
