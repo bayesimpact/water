@@ -1,3 +1,5 @@
+var usageData;
+
 function openBudgetPane(agencyId, agencyName) {
   window.location.hash = agencyId + "/" + agencyName.replace(/ /g, "_");
   $('ul.tabs li').removeClass('disabled');
@@ -6,12 +8,16 @@ function openBudgetPane(agencyId, agencyName) {
 }
 
 function startApp() {
-  if (window.location.hash.indexOf('/') > -1) {
-    var agencyParts = window.location.hash.split('#')[1].split('/');
-    openBudgetPane(agencyParts[0], agencyParts[1].replace(/_/g, " "));
-  } else {
-    initMap();
-  }
+  $.getJSON('data/usage.json', null, function (data) {
+    usageData = data;
+
+    if (window.location.hash.indexOf('/') > -1) {
+      var agencyParts = window.location.hash.split('#')[1].split('/');
+      openBudgetPane(agencyParts[0], agencyParts[1].replace(/_/g, " "));
+    } else {
+      initMap();
+    }
+  });
 }
 
 $(function () {
