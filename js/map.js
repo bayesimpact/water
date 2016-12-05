@@ -78,7 +78,7 @@ function formatAgencyName(rawName) {
                 .replace(/(.*)\, city of/i, 'city of $1')
                 .replace(/(.*)\, town of/i, 'town of $1')
                 .replace(/([^\s])-([^\s])/g, '$1 - $2')
-                .replace(/([^\s])\/([^\s])/g, '$1 - $2')
+                .replace(/([^\s])\/([^\s])/g, '$1 / $2')
                 .toProperCase()
                 .replace('Of', 'of')
                 .replace('Csd', 'CSD')
