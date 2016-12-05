@@ -89,10 +89,12 @@ function formatAgencyName(rawName) {
                 .replace('Id', 'ID')
                 .replace('I.d.', 'ID')
                 .replace('Mud', 'MUD')
+                .replace('Mwc', 'MWC')
                 .replace('Mwd', 'MWD')
                 .replace('Pud', 'PUD')
                 .replace('Sd', 'SD')
                 .replace('Tud', 'TUD')
+                .replace('Wc', 'WC')
                 .replace('Wd', 'WD')
                 .replace('Wwd', 'WWD')
 }
