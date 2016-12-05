@@ -71,7 +71,8 @@ function initMap() {
 }
 
 function formatAgencyName(rawName) {
-  return rawName.replace(/(.*)\, city of/i, 'city of $1')
+  return rawName.replace(/(.*)- city of/i, 'city of $1')
+                .replace(/(.*)\, city of/i, 'city of $1')
                 .replace(/(.*)\, town of/i, 'town of $1')
                 .replace(/([^\s])-([^\s])/g, '$1 - $2')
                 .toProperCase()
@@ -80,8 +81,11 @@ function formatAgencyName(rawName) {
                 .replace('Cwd', 'CWD')
                 .replace('Cwwd', 'CWWD')
                 .replace('Id', 'ID')
+                .replace('I.d.', 'ID')
                 .replace('Mud', 'MUD')
                 .replace('Mwd', 'MWD')
                 .replace('Pud', 'PUD')
+                .replace('Sd', 'SD')
+                .replace('Wd', 'WD')
                 .replace('Wwd', 'WWD')
 }
