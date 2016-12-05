@@ -76,7 +76,7 @@ function renderBudget(agencyId, agencyName) {
   // Format sidebar cards.
 
   var projectedPct = Math.round((thisYearRunningTotal / annualTarget - 1) * 1000) / 10;
-  var lastYearPct = Math.round((lastYearRunningTotal / agencyData.previousTarget - 1) * 1000) / 10;
+  var lastYearPct = Math.round((lastYearRunningTotal / annualTarget - 1) * 1000) / 10;
 
   $('#totalBudget').text(((0).toLocaleString ? Math.round(annualTarget).toLocaleString() : Math.round(annualTarget)) + " gal. / capita");
 
