@@ -13,8 +13,8 @@ In addition to budgeting and planning purposes, this application allows the resi
 
 ## User walkthrough
 1. User is presented with a map of California, highlighting the water supplier districts.
-2. User clicks on the district of their choice, which takes them to the "Budget View"
-3. "Budget view":
+2. User clicks on the district of their choice, which takes them to the "Budget view".
+3. In the "Budget view":
   - Water usage for the current water year (Oct–Sep) is projected based on current water use data and historical usage patterns.
   - Projected water usage is compared to state targets.
 
@@ -24,7 +24,7 @@ In addition to budgeting and planning purposes, this application allows the resi
 - [Mapping of PWD IDs by supplier name to join the datasets](http://www.water.ca.gov/urbanwatermanagement/docs/2010_UWMP_Data_Tables/UWMP_PWS_IDs_07-29-14.xls)
 
 ## Technical details
-Since June 2014, California water suppliers have been reporting their monthly water usage data. Using that dataset, we built simple linear regression models to predict the water usage for each water supplier in the future. This was done with Python, the `pandas` library, and Jupyter notebook (see [`water_usage_prediction.ipynb`](https://github.com/bayesimpact/water/blob/master/exploration/water_usage_prediction.ipynb)).
+Since June 2014, California water suppliers have been reporting their monthly water usage data. Using that dataset, we built simple linear regression models to predict the water usage for each water supplier in the future. This was done with Python, the `pandas` library, and Jupyter notebooks (see [`water_usage_prediction.ipynb`](https://github.com/bayesimpact/water/blob/master/exploration/water_usage_prediction.ipynb)).
 
 Our simple user interface is built with [Materialize](http://materializecss.com/) and [Google Charts](https://developers.google.com/chart/interactive/docs/gallery), hosted via GitHub Pages.
 
