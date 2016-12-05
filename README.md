@@ -1,24 +1,22 @@
 # WaterBudget
 
-### Live app: https://bayesimpact.github.io/water/
+#### Live app: https://bayesimpact.github.io/water/
 #### GitHub repository: https://github.com/bayesimpact/water
 
 ## About
-This proof-of-concept project was built by the [Bayes Impact](https://bayes.org) team to participate in [California Water Data Challenge](http://waterchallenge.data.ca.gov/). This repository contains the code for data analysis and the front-end. 
+This proof-of-concept project was built by the [Bayes Impact](http://www.bayes.org) team to participate in [California Water Data Challenge](http://waterchallenge.data.ca.gov/). This repository contains the code for data analysis and the front-end. 
 
 ## Concept
 Water is a scarce and restricted commodity and it has to be managed as such. Inspired by personal finance applications like Mint and Level, and powered by machine-learning and big data techniques, we have created a proof-of-concept application, WaterBudget, to assist water districts  to manage and plan their water usage and conservation plans. By analyzing the historical water usage patterns in each district, WaterBudget predicts total monthly and annual water usage, ancd compares it to the set target. The water usage prediction allows water districts to be proactive and implement necessary water conservation measures to ensure reaching the water conservation targets. In this demo, the targets set by the State were used, however, in practice, they could be set by local administrations too. 
 
 In addition to budgeting and planning purposes, this application allows the residents to easily follow their respective water suppliers' performance in water conservation. 
 
-## Proposed flow
-1. User selects their local water supplier from a map.
-2. "Budget view":
-  - Water usage for the current water year (Oct–Sep) is projected based on current water use data.
+## User Walkthrough
+1. User is presented with a map of California, highlighting the water supplier districts.
+2. User clicks on the district of their choice, which takes them to the "Budget View"
+3. "Budget view":
+  - Water usage for the current water year (Oct–Sep) is projected based on current water use data and historical usage patterns.
   - Projected water usage is compared to state targets.
-3. (optional) "Transaction view":
-  - User can see water usage for each month in each sector (4 sectors: residential / agricultural / commercial+industrial / unknown) over the past year, and compare to the past year (e.g. residential usage in Oct 2016 vs Oct 2015).
-  - If we're being ambitious, we could try some anomaly detection (e.g. Your city is spending a lot more water on industry this October!), but we don't really have very much data to work with.
 
 ## Data Sets
 - [Urban Water Supplier Report Dataset](http://www.waterboards.ca.gov/water_issues/programs/conservation_portal/conservation_reporting.shtml)
@@ -26,4 +24,19 @@ In addition to budgeting and planning purposes, this application allows the resi
 - [Mapping of PWD IDs by supplier name to join the datasets](http://www.water.ca.gov/urbanwatermanagement/docs/2010_UWMP_Data_Tables/UWMP_PWS_IDs_07-29-14.xls)
 
 ## Technical Details
-Since June 2014, California water suppliers have been reporting their monthly water usage data. Using that dataset, we built simple linear regression models to predict the water usage for each water supplier in the future. More complex and accurate machine-learning models could be implemented if more data is available. Our simple user interface is built with [Materialize](http://materializecss.com/) and [Google Charts](https://developers.google.com/chart/interactive/docs/gallery).
+Since June 2014, California water suppliers have been reporting their monthly water usage data. Using that dataset, we built simple linear regression models to predict the water usage for each water supplier in the future. This was done with Python, the `pandas` library, and Jupyter notebook (see [`water_usage_prediction.ipynb`](https://github.com/bayesimpact/water/blob/master/exploration/water_usage_prediction.ipynb)).
+
+Our simple user interface is built with [Materialize](http://materializecss.com/) and [Google Charts](https://developers.google.com/chart/interactive/docs/gallery), hosted via GitHub Pages.
+
+## Uses for more data
+
+The datasets we have are still temporally limited (going back to 2014). If older data were made available, we could build far more powerful machine-learning models, activating the full suite of modern predictive tools.
+
+## Future extensions to the app
+
+* Create a water budget and help the suppliers to plan their conservation efforts accordingly.
+* Create dashboards for the public to audit their water suppliers’ conservation plans.
+* Create personalized water conservation/budget tools for residents to participate.
+
+-----
+Bayes Impact, 2016
