@@ -12,6 +12,24 @@ nav .brand-logo {
   margin-left: 1.5rem;
 }
 
+nav .tabs {
+  width: 360px;
+  margin-top: 10px;
+}
+
+nav .tab {
+  width: 120px;
+}
+
+nav .tab i {
+  line-height: inherit;
+  margin-left: 3px;
+}
+
+nav .tab.disabled a {
+  color: #7777ee !important;
+}
+
 .pane {
   padding: 10px;
   padding-top: 15px;

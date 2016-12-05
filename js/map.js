@@ -8,7 +8,7 @@ function initMap() {
     return;
   }
 
-  $('#mapContainer').css('height', ($(window).height() - 420) + 'px');
+  $('#mapContainer').css('height', ($(window).height() - 330) + 'px');
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.9, lng: -120.7},
