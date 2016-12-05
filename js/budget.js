@@ -52,8 +52,8 @@ function renderBudgetLineChart(agencyId, agencyName) {
     var lastYearPct = Math.round((lastYearRunningTotal / annualTarget - 1) * 1000) / 10;
 
     $('#totalBudget').text(Math.round(annualTarget) + " gal. / capita");
-    $('#projectedPct').text(projectedPct >= 0 ? projectedPct + "% over" : (-projectedPct) + "% under");
-    $('#lastYearPct').text(lastYearPct >= 0 ? lastYearPct + "% over" : (-lastYearPct) + "% under");
+    $('#projectedPct').text(projectedPct >= 0 ? projectedPct + "% OVER" : (-projectedPct) + "% UNDER");
+    $('#lastYearPct').text(lastYearPct >= 0 ? lastYearPct + "% OVER" : (-lastYearPct) + "% UNDER");
 
     var dateFormatter = new google.visualization.DateFormat({
         pattern: "'October through 'MMMM"
