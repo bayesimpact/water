@@ -4,7 +4,7 @@
 #### GitHub repository: https://github.com/bayesimpact/water
 
 ## About
-This proof-of-concept project was built by the [Bayes Impact](https://bayes.org) team to participate in [California Water Data Challenge](http://waterchallenge.data.ca.gov/). This repository contains the code for data analysis and the front-end. 
+This proof-of-concept project was built by the [Bayes Impact](http://www.bayes.org) team to participate in [California Water Data Challenge](http://waterchallenge.data.ca.gov/). This repository contains the code for data analysis and the front-end. 
 
 ## Concept
 Water is a scarce and restricted commodity and it has to be managed as such. Inspired by personal finance applications like Mint and Level, and powered by machine-learning and big data techniques, we have created a proof-of-concept application, WaterBudget, to assist water districts  to manage and plan their water usage and conservation plans. By analyzing the historical water usage patterns in each district, WaterBudget predicts total monthly and annual water usage, ancd compares it to the set target. The water usage prediction allows water districts to be proactive and implement necessary water conservation measures to ensure reaching the water conservation targets. In this demo, the targets set by the State were used, however, in practice, they could be set by local administrations too. 
