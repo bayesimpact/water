@@ -8,6 +8,8 @@ function initMap() {
     return;
   }
 
+  $('#mapContainer').css('height', ($(window).height() - 420) + 'px');
+
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.9, lng: -120.7},
     zoom: 8

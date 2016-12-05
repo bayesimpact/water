@@ -25,12 +25,12 @@ $(function () {
   google.charts.setOnLoadCallback(startApp);
 
   $('.deselect-agency-button').click(function () {
-    window.location.hash = "";
     $('ul.tabs').tabs('select_tab', 'mapPane');
     $('ul.tabs li:not(:first-child)').addClass('disabled');
   });
 
   $('#mapButton').click(function () {
+    window.location.hash = "";
     initMap();
   });
 });

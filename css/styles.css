@@ -17,10 +17,6 @@ nav .brand-logo {
   padding-top: 15px;
 }
 
-#mapContainer {
-  height: 600px;
-}
-
 #map {
   height: 100%;
 }
