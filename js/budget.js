@@ -79,7 +79,7 @@ function renderBudget(agencyId, agencyName) {
     var projectedPct = Math.round((thisYearRunningTotal / annualTarget - 1) * 1000) / 10;
     var lastYearPct = Math.round((lastYearRunningTotal / annualTarget - 1) * 1000) / 10;
 
-    $('#totalBudget').text(Math.round(annualTarget) + " gal. / capita");
+    $('#totalBudget').text(((0).toLocaleString ? Math.round(annualTarget).toLocaleString() : Math.round(annualTarget)) + " gal. / capita");
 
     if (projectedPct > 0) {
       $('#projectedPct').text(projectedPct + "% OVER");
