@@ -1,7 +1,7 @@
 # WaterBudget
 
-## URL
-https://bayesimpact.github.io/water/
+### Live app: https://bayesimpact.github.io/water/
+#### GitHub repository: https://github.com/bayesimpact/water
 
 ## About
 This proof-of-concept project was built by the [Bayes Impact](https://bayes.org) team to participate in [California Water Data Challenge](http://waterchallenge.data.ca.gov/). This repository contains the code for data analysis and the front-end. 
