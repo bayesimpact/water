@@ -1,6 +1,6 @@
 # WaterBudget
 
-### Live app: https://bayesimpact.github.io/water/
+#### Live app: https://bayesimpact.github.io/water/
 #### GitHub repository: https://github.com/bayesimpact/water
 
 ## About
