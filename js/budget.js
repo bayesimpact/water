@@ -82,7 +82,7 @@ function renderBudget(agencyId, agencyName) {
     $('#totalBudget').text(((0).toLocaleString ? Math.round(annualTarget).toLocaleString() : Math.round(annualTarget)) + " gal. / capita");
 
     if (projectedPct > 0) {
-      $('#projectedPct').text(projectedPct + "% OVER");
+      $('#projectedPct').text(projectedPct == 0 ? "EXACTLY AT" : projectedPct + "% OVER");
       $('#thisYearCard').removeClass('under').addClass('over');
     } else {
       $('#projectedPct').text(-projectedPct + "% UNDER");
@@ -90,7 +90,7 @@ function renderBudget(agencyId, agencyName) {
     }
 
     if (lastYearPct > 0) {
-      $('#lastYearPct').text(lastYearPct + "% OVER");
+      $('#lastYearPct').text(lastYearPct == 0 ? "EXACTLY AT" : lastYearPct + "% OVER");
       $('#lastYearCard').removeClass('under').addClass('over');
     } else {
       $('#lastYearPct').text(-lastYearPct + "% UNDER");
