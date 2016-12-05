@@ -24,7 +24,9 @@ In addition to budgeting and planning purposes, this application allows the resi
 - [Mapping of PWD IDs by supplier name to join the datasets](http://www.water.ca.gov/urbanwatermanagement/docs/2010_UWMP_Data_Tables/UWMP_PWS_IDs_07-29-14.xls)
 
 ## Technical Details
-Since June 2014, California water suppliers have been reporting their monthly water usage data. Using that dataset, we built simple linear regression models to predict the water usage for each water supplier in the future. More complex and accurate machine-learning models could be implemented if more data is available. Our simple user interface is built with [Materialize](http://materializecss.com/) and [Google Charts](https://developers.google.com/chart/interactive/docs/gallery).
+Since June 2014, California water suppliers have been reporting their monthly water usage data. Using that dataset, we built simple linear regression models to predict the water usage for each water supplier in the future. This was done with Python, the `pandas` library, and Jupyter notebook (see [`water_usage_prediction.ipynb`](https://github.com/bayesimpact/water/blob/master/exploration/water_usage_prediction.ipynb)).
+
+Our simple user interface is built with [Materialize](http://materializecss.com/) and [Google Charts](https://developers.google.com/chart/interactive/docs/gallery), hosted via GitHub Pages.
 
 ## Uses for more data
 
