@@ -46,10 +46,10 @@ The datasets we have are still temporally limited (going back to 2014). If older
 
 The Bayes Impact water team is:
 
-* Alex Nisnevich, Software Engineer. Former Data Engineer at Workday, MS UC Berkeley.
-* Mehdi Jamei, Data Scientist. PhD Computer Science, UC Berkeley.
-* Kirtan Upadhyaya, Senior Director. Former Management Consultant at Deloitte. UC Berkeley.
-* Everett Wetchler, Chief Technology Officer. Former Senior Engineer at Google. 
+* [Alex Nisnevich](https://github.com/AlexNisnevich), Software Engineer. Former Data Engineer at Workday, MS UC Berkeley.
+* [Mehdi Jamei](https://github.com/mjamei), Data Scientist. PhD Computer Science, UC Berkeley.
+* [Kirtan Upadhyaya](https://github.com/kirtanupa), Senior Director. Former Management Consultant at Deloitte. UC Berkeley.
+* [Everett Wetchler](https://github.com/everett-wetchler), Chief Technology Officer. Former Senior Engineer at Google. 
 
 -----
 Bayes Impact, 2016
