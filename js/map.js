@@ -45,7 +45,7 @@ function initMap() {
 
     map.data.addListener('mouseover', function (event) {
       var id = event.feature.getProperty('pwsid');
-      var name = event.feature.getProperty('pwsname').toProperCase();
+      var name = formatAgencyName(event.feature.getProperty('pwsname'))
 
       map.data.overrideStyle(event.feature, {strokeWeight: 4});
 
@@ -60,7 +60,7 @@ function initMap() {
     });
 
     map.data.addListener('click', function (event) {
-      openBudgetPane(event.feature.getProperty('pwsid'), event.feature.getProperty('pwsname'));
+      openBudgetPane(event.feature.getProperty('pwsid'), formatAgencyName(event.feature.getProperty('pwsname')));
     });
 
     // Wait a bit for things to render, then hide the spinner.
@@ -68,4 +68,20 @@ function initMap() {
       $('#mapSpinner').hide();
     }, 1000);
   });
+}
+
+function formatAgencyName(rawName) {
+  return rawName.replace(/(.*)\, city of/i, 'city of $1')
+                .replace(/(.*)\, town of/i, 'town of $1')
+                .replace(/([^\s])-([^\s])/g, '$1 - $2')
+                .toProperCase()
+                .replace('Of', 'of')
+                .replace('Csd', 'CSD')
+                .replace('Cwd', 'CWD')
+                .replace('Cwwd', 'CWWD')
+                .replace('Id', 'ID')
+                .replace('Mud', 'MUD')
+                .replace('Mwd', 'MWD')
+                .replace('Pud', 'PUD')
+                .replace('Wwd', 'WWD')
 }
