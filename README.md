@@ -27,3 +27,16 @@ In addition to budgeting and planning purposes, this application allows the resi
 
 ## Technical Details
 Since June 2014, California water suppliers have been reporting their monthly water usage data. Using that dataset, we built simple linear regression models to predict the water usage for each water supplier in the future. More complex and accurate machine-learning models could be implemented if more data is available. Our simple user interface is built with [Materialize](http://materializecss.com/) and [Google Charts](https://developers.google.com/chart/interactive/docs/gallery).
+
+## Uses for more data
+
+The datasets we have are still temporally limited (going back to 2014). If older data were made available, we could build far more powerful machine-learning models, activating the full suite of modern predictive tools.
+
+## Future extensions to the app
+
+* Create a water budget and help the suppliers to plan their conservation efforts accordingly.
+* Create dashboards for the public to audit their water suppliers’ conservation plans.
+* Create personalized water conservation/budget tools for residents to participate.
+
+-----
+Bayes Impact, 2016
