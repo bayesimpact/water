@@ -7,7 +7,7 @@
 This proof-of-concept project was built by the [Bayes Impact](http://www.bayes.org) team to participate in [California Water Data Challenge](http://waterchallenge.data.ca.gov/). This repository contains the code for data analysis and the front-end. 
 
 ## Concept
-Water is a scarce and restricted commodity and it has to be managed as such. Inspired by personal finance applications like Mint and Level, and powered by machine-learning and big data techniques, we have created a proof-of-concept application, WaterBudget, to assist water districts  to manage and plan their water usage and conservation plans. By analyzing the historical water usage patterns in each district, WaterBudget predicts total monthly and annual water usage, ancd compares it to the set target. The water usage prediction allows water districts to be proactive and implement necessary water conservation measures to ensure reaching the water conservation targets. In this demo, the targets set by the State were used, however, in practice, they could be set by local administrations too. 
+Water is a scarce and restricted commodity and it has to be managed as such. Inspired by personal finance applications such as [Mint](https://www.mint.com/) and [Level](https://www.levelmoney.com/), and powered by machine learning techniques, we have created a proof-of-concept application, **[WaterBudget](https://bayesimpact.github.io/water/)**, to assist water districts  to manage and plan their water usage and conservation plans. By analyzing the historical water usage patterns in each district, WaterBudget predicts total monthly and annual water usage, ancd compares it to the set target. The water usage prediction allows water districts to be proactive and implement necessary water conservation measures to ensure reaching the water conservation targets. In this demo, the targets set by the State were used, however, in practice, they could be set by local administrations too. 
 
 In addition to budgeting and planning purposes, this application allows the residents to easily follow their respective water suppliers' performance in water conservation. 
 
@@ -42,7 +42,7 @@ The datasets we have are still temporally limited (going back to 2014). If older
 
 ## About the team
 
-[**Bayes Impact**](http://www.bayes.org) is a data science and software engineering 501c3 nonprofit. Our mission is to provide data services and build data products to solve pressing social challenges at scale. Our team consists of full-time software engineers, data scientists, designers, and project managers from leading Silicon Valley companies. We leverage our experience building the world’s largest data products and infrastructure at companies such as Google, Uber, and Box to provide innovative data and technology solutions for public sector organizations.
+[**Bayes Impact**](http://www.bayes.org) is a data science and software engineering 501c3 nonprofit. We take a mission-driven approach to provide agency clients with impactful solutions for pressing social challenges. Our team consists of full-time software engineers, data scientists, designers, and project managers from leading Silicon Valley companies. We leverage our experience building the world’s largest data products and infrastructure at companies such as Google, Uber, and Box to provide innovative data and technology solutions for public sector organizations.
 
 The Bayes Impact water team is:
 
