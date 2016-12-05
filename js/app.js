@@ -1,16 +1,16 @@
-function openBudgetPane(agencyId) {
-  $('.pane').hide();
-  $('#budgetPane').show();
-  $('#budgetPane #agencyName').text(agencyId);
-}
-
-function openMapPane() {
-  $('.pane').hide();
-  $('#mapPane').show();
+function openBudgetPane(agencyId, agencyName) {
+  $('ul.tabs li').removeClass('disabled');
+  $('ul.tabs').tabs('select_tab', 'budgetPane');
+  renderBudgetLineChart(agencyId, agencyName);
 }
 
 $(function () {
-  initMap();
+  google.charts.load("current", {packages: ["corechart"]});
 
-  $('#chooseADifferentAgency').click(openMapPane);
-})
+  $('.deselect-agency-button').click(function () {
+    $('ul.tabs').tabs('select_tab', 'mapPane');
+    $('ul.tabs li:not(:first-child)').addClass('disabled');
+  });
+
+  initMap();
+});
