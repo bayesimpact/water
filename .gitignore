@@ -1,4 +1,3 @@
-
-exploration/.ipynb_checkpoints/annual_water_use_prediction-checkpoint.ipynb
-
+.DS_Store
 *.pyc
+exploration/.ipynb_checkpoints/*
