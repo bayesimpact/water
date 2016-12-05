@@ -33,7 +33,7 @@ function renderBudget(agencyId, agencyName) {
     var lastYearRunningTotal = 0;
     var thisYearRunningTotal = 0;
 
-    data.addRow([new Date(currentYearStart, 9), null, 0, 0, annualTarget]);
+    data.addRow([new Date(currentYearStart, 9), null, 0, 0, Math.round(annualTarget)]);
 
     [10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function (month) {
       var year = (month >= 10) ? currentYearStart : currentYearStart + 1;
@@ -48,10 +48,22 @@ function renderBudget(agencyId, agencyName) {
 
       if (thisMonthProjected) {
         thisYearRunningTotal += agencyData.monthlyPrediction[month.padLeft(2)];
-        data.addRow([new Date(year, month), thisYearRunningTotal, null, lastYearRunningTotal, annualTarget]);
+        data.addRow([
+          new Date(year, month),
+          Math.round(thisYearRunningTotal),
+          null,
+          Math.round(lastYearRunningTotal),
+          Math.round(annualTarget)
+        ]);
       } else {
         thisYearRunningTotal += agencyData.totalUsage[year + '-' + month.padLeft(2)];
-        data.addRow([new Date(year, month), nextMonthProjected ? thisYearRunningTotal : null, thisYearRunningTotal, lastYearRunningTotal, annualTarget]);
+        data.addRow([
+          new Date(year, month),
+          nextMonthProjected ? Math.round(thisYearRunningTotal) : null,
+          Math.round(thisYearRunningTotal),
+          Math.round(lastYearRunningTotal),
+          Math.round(annualTarget)
+        ]);
       }
     });
 

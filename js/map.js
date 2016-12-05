@@ -31,7 +31,7 @@ function initMap() {
 
     map.data.setStyle(function(feature) {
       var id = parseInt(feature.getProperty('pwsid'));
-      var color = ['#09C', '#6C6', '#39C', '#039'][(id % 123) % 4];
+      var color = ['#09C', '#393', '#39C', '#039'][(id % 123) % 4];
 
       return {
         fillColor: color,
