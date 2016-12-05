@@ -18,9 +18,9 @@ function renderBudgetLineChart(agencyId, agencyName) {
 
     var data = new google.visualization.DataTable();
     data.addColumn('date', 'Month');
-    data.addColumn('number', 'Projected (' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
-    data.addColumn('number', 'Actual (' + currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ')');
-    data.addColumn('number', 'Actual Last Year (' + (currentYearStart - 1) + '-' + currentYearStart.toString().slice(2) + ')');
+    data.addColumn('number', currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ' projected');
+    data.addColumn('number', currentYearStart + '-' + (currentYearStart + 1).toString().slice(2));
+    data.addColumn('number', (currentYearStart - 1) + '-' + currentYearStart.toString().slice(2));
     data.addColumn('number', 'Annual Target');
 
     var lastYearRunningTotal = 0;
@@ -48,6 +48,13 @@ function renderBudgetLineChart(agencyId, agencyName) {
       }
     });
 
+    var projectedPct = Math.round((thisYearRunningTotal / annualTarget - 1) * 1000) / 10;
+    var lastYearPct = Math.round((lastYearRunningTotal / annualTarget - 1) * 1000) / 10;
+
+    $('#totalBudget').text(Math.round(annualTarget) + " gal. / capita");
+    $('#projectedPct').text(projectedPct >= 0 ? projectedPct + "% over" : (-projectedPct) + "% under");
+    $('#lastYearPct').text(lastYearPct >= 0 ? lastYearPct + "% over" : (-lastYearPct) + "% under");
+
     var dateFormatter = new google.visualization.DateFormat({
         pattern: "'October through 'MMMM"
     });
@@ -57,8 +64,8 @@ function renderBudgetLineChart(agencyId, agencyName) {
 
     var options = {
       title: 'Water Usage for ' + agencyName,
-      width: 900,
-      height: 600,
+      width: "100%",
+      height: 500,
       chartArea: {width: '80%', height: '80%'},
       legend: {position: 'top'},
       hAxis: {
@@ -97,5 +104,7 @@ function renderBudgetLineChart(agencyId, agencyName) {
     }
 
     visualization.draw(data, options);
+
+    $(window).resize(function () { visualization.draw(data, options); });
   });
 }

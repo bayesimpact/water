@@ -43,3 +43,14 @@ nav .brand-logo {
   line-height: 32px;
   padding-left: 8px;
 }
+
+#budgetSidebar .card-panel {
+  background-color: #8888ff;
+  color: white;
+}
+
+#budgetSidebar .card-panel div {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}

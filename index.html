@@ -54,12 +54,37 @@
     </div>
 
     <div id="budgetPane" class="pane">
-      <div class="chip">
-        <b>Agency:</b> <span id="agencyName"></span>
-        <i class="material-icons deselect-agency-button">close</i>
+
+      <div class="row">
+        <div class="chip">
+          <b>Agency:</b> <span id="agencyName"></span>
+          <i class="material-icons deselect-agency-button">close</i>
+        </div>
       </div>
 
-      <div id="budgetViz"></div>
+      <div class="row">
+        <div class="col s12 m12 l3" id="budgetSidebar">
+          <div class="col s12 m6 l12">
+            <div class="card-panel">
+              Your annual water budget is <div id="totalBudget"></div>
+            </div>
+          </div>
+          <div class="col s12 m6 l12">
+            <div class="card-panel">
+              You are projected to go <div id="projectedPct"></div> your budget this year.
+            </div>
+          </div>
+          <div class="col s12 m6 l12">
+            <div class="card-panel">
+              Last year you were <div id="lastYearPct"></div> your budget.
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l9">
+          <div id="budgetViz"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
