@@ -42,7 +42,7 @@ The datasets we have are still temporally limited (going back to 2014). If older
 
 ## About the team
 
-[**Bayes Impact**](http://www.bayes.org) is a data science and software engineering 501c3 nonprofit. We take a mission-driven approach to provide agency clients with impactful solutions for pressing social challenges. Our team consists of full-time software engineers, data scientists, designers, and project managers from leading Silicon Valley companies. We leverage our experience building the world’s largest data products and infrastructure at companies such as Google, Uber, and Box to provide innovative data and technology solutions for public sector organizations.
+[**Bayes Impact**](http://www.bayes.org) is a data science and software engineering 501c3 nonprofit. Our mission is to provide data services and build data products to solve pressing social challenges at scale. Our team consists of full-time software engineers, data scientists, designers, and project managers from leading Silicon Valley companies. We leverage our experience building the world’s largest data products and infrastructure at companies such as Google, Uber, and Box to provide innovative data and technology solutions for public sector organizations.
 
 The Bayes Impact water team is:
 
