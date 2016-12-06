@@ -2,7 +2,74 @@ function renderBudget(agencyId, agencyName) {
   $('#budget').hide();
   $('#budgetSpinner').show();
 
+<<<<<<< HEAD
   // Extract data from JSON.
+=======
+  $.getJSON('data/usage.json', null, function (data) {
+    // Extract data from JSON.
+
+    console.log(agencyId);
+    var agencyData = data['CA' + agencyId];
+
+    $('#budgetPane').show();
+    $('#budgetPane #agencyName').text(agencyName);
+    $('#budgetViz').html('');
+    //$('#budgetViz').text(JSON.stringify(agencyData));
+
+    var lastReportedDate = Object.keys(agencyData.totalUsage).sort().pop();
+    var lastReportedMonth = parseInt(lastReportedDate.split("-")[1]);
+    var lastReportedYear = parseInt(lastReportedDate.split("-")[0]);
+    var currentYearStart = (lastReportedMonth >= 10) ? lastReportedYear : lastReportedYear - 1;
+    var annualTarget = agencyData.annualTarget;
+
+    var visualization = new google.visualization.LineChart($('#budgetViz')[0]);
+
+    // Generate data for charts.
+
+    var data = new google.visualization.DataTable();
+    data.addColumn('date', 'Month');
+    data.addColumn('number', currentYearStart + '-' + (currentYearStart + 1).toString().slice(2) + ' projected');
+    data.addColumn('number', currentYearStart + '-' + (currentYearStart + 1).toString().slice(2));
+    data.addColumn('number', (currentYearStart - 1) + '-' + currentYearStart.toString().slice(2));
+    data.addColumn('number', 'Annual Target');
+
+    var lastYearRunningTotal = 0;
+    var thisYearRunningTotal = 0;
+
+    data.addRow([new Date(currentYearStart, 9), null, 0, 0, Math.round(annualTarget)]);
+
+    [10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function (month) {
+      var year = (month >= 10) ? currentYearStart : currentYearStart + 1;
+
+      var nextMonth = (month % 12) + 1;
+      var nextMonthsYear = (month == 12) ? year + 1 : year;
+
+      var thisMonthProjected = ((year + '-' + month.padLeft(2)) > lastReportedDate);
+      var nextMonthProjected = ((nextMonthsYear + '-' + nextMonth.padLeft(2)) > lastReportedDate);
+
+      lastYearRunningTotal += agencyData.totalUsage[(year - 1) + '-' + month.padLeft(2)];
+
+      if (thisMonthProjected) {
+        thisYearRunningTotal += agencyData.monthlyPrediction[month.padLeft(2)];
+        data.addRow([
+          new Date(year, month),
+          Math.round(thisYearRunningTotal),
+          null,
+          Math.round(lastYearRunningTotal),
+          Math.round(annualTarget)
+        ]);
+      } else {
+        thisYearRunningTotal += agencyData.totalUsage[year + '-' + month.padLeft(2)];
+        data.addRow([
+          new Date(year, month),
+          nextMonthProjected ? Math.round(thisYearRunningTotal, 1) : null,
+          Math.round(thisYearRunningTotal),
+          Math.round(lastYearRunningTotal),
+          Math.round(annualTarget)
+        ]);
+      }
+    });
+>>>>>>> 422ecfb... Update colors and other UI pieces of the Budget panel
 
   console.log(agencyId);
   var agencyData = usageData['CA' + agencyId];
@@ -116,18 +183,19 @@ function renderBudget(agencyId, agencyName) {
     series: {
       0: {
         // Projected
-        color: '#0000ff',
+        color: '#2574A9',
         lineDashStyle: [4, 4],
         lineWidth: 4
       },
       1: {
         // Actual
-        color: '#0000ff',
+        color: '#2574A9',
         lineWidth: 4
       },
       2: {
         // Last year
-        color: '#8888ff',
+        color: '#7dbae3',
+        alpha: '0.5', 
         lineWidth: 2
       },
       3: {
