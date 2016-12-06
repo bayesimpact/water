@@ -7,7 +7,7 @@
 This proof-of-concept project was built by the [Bayes Impact](http://www.bayes.org) team to participate in [California Water Data Challenge](http://waterchallenge.data.ca.gov/). This repository contains the code for data analysis and the front-end. 
 
 ## Concept
-Water is a scarce and restricted commodity and it has to be managed as such. Inspired by personal finance applications such as [Mint](https://www.mint.com/) and [Level](https://www.levelmoney.com/), and powered by machine learning techniques, we have created a proof-of-concept application, **[WaterBudget](https://bayesimpact.github.io/water/)**, to assist water districts  to manage and plan their water usage and conservation plans. By analyzing the historical water usage patterns in each district, WaterBudget predicts total monthly and annual water usage, ancd compares it to the set target. The water usage prediction allows water districts to be proactive and implement necessary water conservation measures to ensure reaching the water conservation targets. In this demo, the targets set by the State were used, however, in practice, they could be set by local administrations too. 
+Water is a scarce and restricted commodity and it has to be managed as such. Inspired by personal finance applications such as [Mint](https://www.mint.com/) and [Level](https://www.levelmoney.com/), and powered by machine learning techniques, we have created a proof-of-concept application, **[WaterBudget](https://bayesimpact.github.io/water/)**, to assist water districts  to manage and plan their water usage and conservation plans. By analyzing the historical water usage patterns in each district, WaterBudget predicts total monthly and annual water usage, and compares it to the set target. The water usage prediction allows water districts to be proactive and implement necessary water conservation measures to ensure reaching the water conservation targets. In this demo, the targets set by the State were used, however, in practice, they could be set by local administrations too. 
 
 In addition to budgeting and planning purposes, this application allows the residents to easily follow their respective water suppliers' performance in water conservation. 
 
@@ -48,7 +48,7 @@ The Bayes Impact water team is:
 
 * [Alex Nisnevich](https://github.com/AlexNisnevich), Software Engineer. Former Data Engineer at Workday, MS UC Berkeley.
 * [Mehdi Jamei](https://github.com/mjamei), Data Scientist. PhD Computer Science, UC Berkeley.
-* [Kirtan Upadhyaya](https://github.com/kirtanupa), Senior Director. Former Management Consultant at Deloitte. UC Berkeley.
+* [Kirtan Upadhyaya](https://github.com/kirtanupa), Partnerships. Former Management Consultant at Deloitte. UC Berkeley.
 * [Everett Wetchler](https://github.com/everett-wetchler), Chief Technology Officer. Former Senior Engineer at Google. 
 
 -----

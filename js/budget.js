@@ -100,6 +100,10 @@ function renderBudget(agencyId, agencyName) {
 
   var options = {
     title: 'Water Usage for ' + agencyName,
+    titleTextStyle: {
+        fontSize: 24,
+    },
+    fontName: "Lato",
     width: "100%",
     height: 500,
     chartArea: {width: '80%', height: '80%'},
